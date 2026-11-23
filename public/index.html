@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dancing Dead Dystopia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Creepster&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#inicio">Dancing Dead <span>Dystopia</span></a>
+  <nav>
+    <a href="#inicio" data-nav="inicio">Inicio</a>
+    <a href="#juego" data-nav="juego">El juego</a>
+    <a href="#desarrollo" data-nav="desarrollo">Desarrollo</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- INICIO -->
+<div class="page" data-page="inicio">
+  <div class="hero"><div class="wrap hero-grid"><div>
+    <span class="badge">En desarrollo</span>
+    <h1 class="glitch">Dancing Dead<br>Dystopia</h1>
+    <p class="lead">Bienvenido al fin del mundo… y la pista de baile sigue encendida. Un juego en desarrollo donde el ritmo es la única forma de sobrevivir en una distopía llena de muertos que no dejan de bailar.</p>
+    <p><a class="btn" href="#sub">Quiero enterarme de las novedades</a> <a class="btn alt" href="#juego">Conocer el juego</a></p>
+  </div><img class="sprite" src="img/sprite.png" alt="Sprite pixelado de un zombi bailando con atuendo rojo"></div></div>
+
+  <section class="block"><div class="wrap">
+    <h2>Gameplay</h2>
+    <div class="video">
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <p id="vtxt">Video del gameplay próximamente</p>
+        <a class="btn" id="vlink" href="#" target="_blank" rel="noopener" style="display:none">Ver el video</a>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <h2>Explora el proyecto</h2>
+    <div class="grid">
+      <div class="card"><h3>El juego</h3><p>Qué es Dancing Dead Dystopia, los bocetos iniciales y los objetivos que nos hemos puesto.</p><a class="more" href="#juego">Ver información →</a></div>
+      <div class="card"><h3>Desarrollo</h3><p>Notas de avance, imágenes y videos del proceso de creación, conforme van saliendo.</p><a class="more" href="#desarrollo">Ver avances →</a></div>
+      <div class="card"><h3>Apóyanos</h3><p>Suscríbete para recibir un correo con cada actualización o apoya el proyecto con una donación.</p><a class="more" href="#sub">Ir a suscripción y donación →</a></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- JUEGO -->
+<div class="page" data-page="juego">
+  <section class="block"><div class="wrap">
+    <span class="kicker">Información del juego</span>
+    <h1>¿Qué es Dancing Dead Dystopia?</h1>
+    <p class="lead">Dancing Dead Dystopia es un juego independiente, actualmente en desarrollo, ambientado en un mundo distópico donde los muertos bailan y el ritmo marca las reglas.</p>
+    <p>Aquí irá la descripción detallada: la premisa, el mundo, los personajes, la mecánica principal y lo que hace único al juego. Este texto es un marcador de posición y se reemplaza con la información final del proyecto.</p>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <h2>Bocetos iniciales</h2>
+    <div class="grid">
+      <figure style="margin:0;grid-column:1/-1"><img class="sk-wide" src="img/poses.png" alt="Hoja de seis poses del zombi: de pie, tapándose el rostro, cruzando las piernas, con los brazos extendidos, con una pierna y un brazo en alto y celebrando con destellos"><figcaption>Poses iniciales del zombi</figcaption></figure>
+      <figure style="margin:0"><img class="sk tall" src="img/menu.png" alt="Pantalla de inicio del prototipo con los botones Jugar, Configuración y Salir"><figcaption>Pantalla de inicio del prototipo</figcaption></figure>
+      <figure style="margin:0"><img class="sk tall" src="img/game.png" alt="Prototipo de la pantalla de juego con cuatro carriles de colores y notas numeradas que caen hacia los botones"><figcaption>Prototipo de la pantalla de juego</figcaption></figure>
+      <figure style="margin:0"><div class="ph tall">Boceto 3</div><figcaption>Ambientación de la ciudad</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <h2>Objetivos del juego</h2>
+    <ul class="goals">
+      <li>Crear una experiencia con identidad propia, donde música y mundo distópico sean una sola cosa.</li>
+      <li>Ofrecer una jugabilidad clara, desafiante y fácil de aprender.</li>
+      <li>Construir el juego en público, compartiendo cada avance con la comunidad.</li>
+      <li>Publicar una primera versión jugable para recibir comentarios.</li>
+    </ul>
+  </div></section>
+</div>
+
+<!-- DESARROLLO -->
+<div class="page" data-page="desarrollo">
+  <section class="block"><div class="wrap">
+    <span class="kicker">Bitácora</span>
+    <h1>Desarrollo</h1>
+    <p class="lead">Notas de avance del proyecto. Suscríbete abajo para recibir un correo cada vez que haya una nueva entrada.</p>
+    <div id="posts"></div>
+  </div></section>
+</div>
+</main>
+
+<!-- SUSCRIPCIÓN Y DONACIÓN -->
+<div class="cta" id="sub"><div class="wrap"><div class="grid">
+  <div>
+    <h2>Recibe las novedades</h2>
+    <p style="color:var(--muted)">Déjanos tu correo y te avisaremos cuando haya una actualización en el apartado de Desarrollo.</p>
+    <form class="sub" id="subform">
+      <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Correo electrónico">
+      <button class="btn" type="submit">Suscribirme</button>
+    </form>
+    <p id="msg" role="status"></p>
+    <p class="small">Al suscribirte aceptas recibir correos sobre el proyecto. Puedes darte de baja en cualquier momento.</p>
+  </div>
+  <div>
+    <h2>Apoya el proyecto</h2>
+    <p style="color:var(--muted)">Si te gusta lo que ves, una donación ayuda a que el juego siga avanzando.</p>
+    <form class="sub" id="donform">
+      <input type="number" name="monto" min="1" max="5000" step="1" value="100" required aria-label="Monto de la donación">
+      <button class="btn alt" type="submit">Donar con PayPal</button>
+    </form>
+    <p class="small">Monto en <span id="moneda">MXN</span>. El pago se completa de forma segura en PayPal.</p>
+    <p id="donmsg" role="status"></p>
+  </div>
+</div></div></div>
+
+<footer><div class="wrap">© 2026 Dancing Dead Dystopia · Juego en desarrollo</div></footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+  {
+    "fecha": "Noviembre 2026",
+    "titulo": "Primeras pruebas del prototipo",
+    "texto": "Aquí irá la nota de avance: qué se trabajó, qué funcionó y qué sigue. Cada entrada puede llevar una imagen o un video.",
+    "imagen": "img/game.png",
+    "alt": "Prototipo de la pantalla de juego con cuatro carriles de colores"
+  },
+  {
+    "fecha": "Octubre 2026",
+    "titulo": "Arranca el desarrollo",
+    "texto": "Entrada de ejemplo. Reemplázala con tus notas reales de desarrollo."
+  }
+]
