@@ -1,13 +1,18 @@
-
+/* ====== CONFIGURA AQUÍ ====== */
 const CONFIG = {
-  VIDEO_URL: "" // enlace al video del gameplay 
+  // ID del video de YouTube: lo que va después de "v=" en la dirección (o después de youtu.be/).
+  // Deja el id vacío ("") para los videos que aún no subes.
+  VIDEOS: [
+    { titulo: "Gameplay corto (1 min)", id: "4QF4qvYNj7s" },
+    { titulo: "Gameplay extendido (3 min)", id: "4QF4qvYNj7s" }
+  ]
 };
 /* ============================ */
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-/* ----  Navegación entre secciones (#inicio, #juego, #desarrollo) ---- */
+/* ---- 1. Navegación entre secciones (#inicio, #juego, #desarrollo) ---- */
 const pages = [...document.querySelectorAll(".page")];
 const links = [...document.querySelectorAll("[data-nav]")];
 
@@ -30,15 +35,30 @@ function route() {
 addEventListener("hashchange", route);
 route();
 
-/* ----  Video del gameplay ---- */
-if (CONFIG.VIDEO_URL) {
-  const l = $("#vlink");
-  l.href = CONFIG.VIDEO_URL;
-  l.style.display = "inline-block";
-  $("#vtxt").textContent = "Mira el gameplay del juego";
+/* ---- 2. Videos del gameplay (YouTube incrustado) ---- */
+const vbox = $("#vbox"), vtabs = $("#vtabs");
+const vPlaceholder = vbox.innerHTML;
+const videos = CONFIG.VIDEOS.filter((v) => v.id);
+
+function mostrarVideo(i) {
+  const v = videos[i];
+  [...vtabs.children].forEach((b, j) => b.classList.toggle("on", j === i));
+  vbox.classList.add("on");
+  vbox.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}" title="${esc(v.titulo)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+}
+if (videos.length) {
+  if (videos.length > 1) {
+    videos.forEach((v, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.textContent = v.titulo;
+      b.addEventListener("click", () => mostrarVideo(i));
+      vtabs.appendChild(b);
+    });
+  }
+  mostrarVideo(0);
 }
 
-/* ----  Servicio propio: GET /api/entradas ---- */
+/* ---- 3. Servicio propio: GET /api/entradas ---- */
 async function cargarEntradas() {
   const cont = $("#posts");
   try {
@@ -58,7 +78,7 @@ async function cargarEntradas() {
 }
 cargarEntradas();
 
-/* ---. Suscripción: POST /api/suscribir (usa el servicio de correo) ---- */
+/* ---- 4. Suscripción: POST /api/suscribir (usa el servicio de correo) ---- */
 $("#subform").addEventListener("submit", async (e) => {
   e.preventDefault();
   const msg = $("#msg");
@@ -100,7 +120,7 @@ $("#donform").addEventListener("submit", async (e) => {
   }
 });
 
-
+/* Mensaje al volver de PayPal (?donacion=ok | cancelado | error) */
 const don = new URLSearchParams(location.search).get("donacion");
 if (don) {
   const textos = {
@@ -111,3 +131,23 @@ if (don) {
   $("#donmsg").textContent = textos[don] || "";
   history.replaceState(null, "", location.pathname + location.hash);
 }
+
+/* ---- 6. Servicio propio: GET /api/descarga (versión alfa para Android) ---- */
+async function cargarDescarga() {
+  const card = $("#dlcard");
+  try {
+    const r = await fetch("/api/descarga");
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    if (!d.url) { card.innerHTML = '<h3>Próximamente</h3><p class="small" style="margin:0">La versión alfa estará disponible muy pronto.</p>'; return; }
+    const datos = [d.fecha, d.tamano, d.requisitos].filter(Boolean).map(esc).join(" · ");
+    card.innerHTML = `<h3>Versión ${esc(d.version)}</h3>
+      ${datos ? `<p class="small" style="margin:0 0 10px">${datos}</p>` : ""}
+      ${d.notas ? `<p>${esc(d.notas)}</p>` : ""}
+      <p><a class="btn" href="${esc(d.url)}" rel="noopener">Descargar APK</a></p>
+      ${d.sha256 ? `<details><summary>Verificar integridad (SHA-256)</summary><code>${esc(d.sha256)}</code></details>` : ""}`;
+  } catch {
+    card.innerHTML = '<p class="small" style="margin:0">No se pudo cargar la información de la descarga.</p>';
+  }
+}
+cargarDescarga();

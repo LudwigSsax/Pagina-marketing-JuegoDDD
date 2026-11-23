@@ -33,6 +33,13 @@ app.get('/api/entradas', (req, res, next) => {
   } catch (e) { next(e); }
 });
 
+app.get('/api/descarga', (req, res, next) => {
+  try {
+    const ruta = path.join(__dirname, 'data', 'descarga.json');
+    res.json(JSON.parse(fs.readFileSync(ruta, 'utf8')));
+  } catch (e) { next(e); }
+});
+
 app.post('/api/suscribir', async (req, res, next) => {
   const email = String((req.body && req.body.email) || '').trim().toLowerCase();
   if (email.length > 254 || !EMAIL_RE.test(email)) {

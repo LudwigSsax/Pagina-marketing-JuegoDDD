@@ -15,6 +15,7 @@
     <a href="#inicio" data-nav="inicio">Inicio</a>
     <a href="#juego" data-nav="juego">El juego</a>
     <a href="#desarrollo" data-nav="desarrollo">Desarrollo</a>
+    <a href="#descarga" data-nav="descarga">Probar</a>
   </nav>
 </div></header>
 
@@ -25,16 +26,16 @@
     <span class="badge">En desarrollo</span>
     <h1 class="glitch">Dancing Dead<br>Dystopia</h1>
     <p class="lead">Bienvenido al fin del mundo… y la pista de baile sigue encendida. Un juego en desarrollo donde el ritmo es la única forma de sobrevivir en una distopía llena de muertos que no dejan de bailar.</p>
-    <p><a class="btn" href="#sub">Quiero enterarme de las novedades</a> <a class="btn alt" href="#juego">Conocer el juego</a></p>
+    <p><a class="btn" href="#descarga">Probar la versión alfa</a> <a class="btn alt" href="#juego">Conocer el juego</a> <a class="btn alt" href="#sub">Recibir novedades</a></p>
   </div><img class="sprite" src="img/sprite.png" alt="Sprite pixelado de un zombi bailando con atuendo rojo"></div></div>
 
   <section class="block"><div class="wrap">
     <h2>Gameplay</h2>
-    <div class="video">
+    <div class="tabs" id="vtabs"></div>
+    <div class="video" id="vbox">
       <div>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        <p id="vtxt">Video del gameplay próximamente</p>
-        <a class="btn" id="vlink" href="#" target="_blank" rel="noopener" style="display:none">Ver el video</a>
+        <p>Video del gameplay próximamente</p>
       </div>
     </div>
   </div></section>
@@ -44,6 +45,7 @@
     <div class="grid">
       <div class="card"><h3>El juego</h3><p>Qué es Dancing Dead Dystopia, los bocetos iniciales y los objetivos que nos hemos puesto.</p><a class="more" href="#juego">Ver información →</a></div>
       <div class="card"><h3>Desarrollo</h3><p>Notas de avance, imágenes y videos del proceso de creación, conforme van saliendo.</p><a class="more" href="#desarrollo">Ver avances →</a></div>
+      <div class="card"><h3>Prueba el juego</h3><p>Descarga la versión alfa para Android y cuéntanos qué te parece.</p><a class="more" href="#descarga">Ir a la descarga →</a></div>
       <div class="card"><h3>Apóyanos</h3><p>Suscríbete para recibir un correo con cada actualización o apoya el proyecto con una donación.</p><a class="more" href="#sub">Ir a suscripción y donación →</a></div>
     </div>
   </div></section>
@@ -86,6 +88,25 @@
     <h1>Desarrollo</h1>
     <p class="lead">Notas de avance del proyecto. Suscríbete abajo para recibir un correo cada vez que haya una nueva entrada.</p>
     <div id="posts"></div>
+  </div></section>
+</div>
+<!-- DESCARGA -->
+<div class="page" data-page="descarga">
+  <section class="block"><div class="wrap">
+    <span class="kicker">Versión alfa</span>
+    <h1>Prueba el juego</h1>
+    <p class="lead">Una versión muy temprana de Dancing Dead Dystopia para Android. Puede tener errores y cambiar mucho antes del lanzamiento. Tu opinión nos ayuda a mejorarla.</p>
+    <div class="card" id="dlcard"><p class="small">Cargando información de la descarga…</p></div>
+  </div></section>
+  <section class="block"><div class="wrap">
+    <h2>Cómo instalarlo</h2>
+    <ol class="steps">
+      <li>Descarga el archivo .apk desde un teléfono Android.</li>
+      <li>Ábrelo desde la carpeta de descargas. Android te pedirá permiso para instalar aplicaciones desde esa fuente (el nombre del ajuste cambia según el fabricante). Concédelo solo al navegador o al gestor de archivos que usaste.</li>
+      <li>Pulsa Instalar. Puede aparecer un aviso de seguridad porque la app no viene de Google Play; es normal en una versión de prueba.</li>
+      <li>Al terminar, vuelve a desactivar el permiso de instalar apps de fuentes desconocidas.</li>
+    </ol>
+    <p class="small">Descarga el archivo solo desde esta página. Si quieres comprobar que no se alteró, compara el código SHA-256 que aparece arriba con el de tu copia.</p>
   </div></section>
 </div>
 </main>
