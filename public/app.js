@@ -3,8 +3,8 @@ const CONFIG = {
   // ID del video de YouTube: lo que va después de "v=" en la dirección (o después de youtu.be/).
   // Deja el id vacío ("") para los videos que aún no subes.
   VIDEOS: [
-    { titulo: "Gameplay corto (1 min)", id: "4QF4qvYNj7s" },
-    { titulo: "Gameplay extendido (3 min)", id: "4QF4qvYNj7s" }
+    { titulo: "Gameplay corto prototipo 1 (1 min)", id: "4QF4qvYNj7s" },
+    { titulo: "Gameplay avances mediados de noviembre (3 min)", id: "hBqhBJW2E3M" }
   ]
 };
 /* ============================ */

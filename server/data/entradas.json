@@ -1,14 +1,19 @@
 [
   {
+    "fecha": "Mediados de noviembre 2026",
+    "titulo": "Avances en visuales y mecánicas",
+    "texto": "Se implementaron las notas que hacen daño, las notas fantasma y nuevos sprites para la pantalla de juego, menú y selección de canciones.",
+    "imagen": "img/Revamp.jpeg"
+  },{
     "fecha": "Noviembre 2026",
     "titulo": "Primeras pruebas del prototipo",
-    "texto": "Aquí irá la nota de avance: qué se trabajó, qué funcionó y qué sigue. Cada entrada puede llevar una imagen o un video.",
+    "texto": "Implementación del zombie bailarín que se mueve al ritmo de las notas.",
     "imagen": "img/game.png",
     "alt": "Prototipo de la pantalla de juego con cuatro carriles de colores"
   },
   {
     "fecha": "Octubre 2026",
     "titulo": "Arranca el desarrollo",
-    "texto": "Entrada de ejemplo. Reemplázala con tus notas reales de desarrollo."
+    "texto": "Comienza el desarrollo, con lluvia de ideas además de planteamiento de objetivos."
   }
 ]
